@@ -6,23 +6,15 @@ rvm:
   - 2.4.5
   - 2.5.3
   - "jruby-9.2.3.0"
-  
+
 runtime:
   nodePool: dynamic__x86_64__CentOS_7__c4_large
   
 build:
   pre_ci_boot:
     image_name: drydock/c7ruball
-    image_tag: master
+    image_tag: v6.12.4
     pull: true
     
   ci:
-    - ruby -v  
-    - docker pull shippabledocker/sample_node_pvt:ecr
-    
-integrations:
-    
-  hub:
- #Docker integration
-    - integrationName: ship-docker
-      type: dockerRegistryLogin
+    - ruby -v
